@@ -97,7 +97,7 @@ class ChainMap(MutableMapping):
 
     @classmethod
     def fromkeys(cls, iterable, *args):
-        'Create a ChainMap with a single dict created from the iterable.'
+        """Create a ChainMap with a single dict created from the iterable."""
         return cls(dict.fromkeys(iterable, *args))
 
     def copy(self):
@@ -120,7 +120,7 @@ class ChainMap(MutableMapping):
 
     @property
     def parents(self):  # like Django's Context.pop()
-        'New ChainMap from maps[1:].'
+        """New ChainMap from maps[1:]."""
         return self.__class__(*self.maps[1:])
 
     def __setitem__(self, key, value):
@@ -155,5 +155,5 @@ class ChainMap(MutableMapping):
                            .format(key))
 
     def clear(self):
-        'Clear maps[0], leaving maps[1:] intact.'
+        """Clear maps[0], leaving maps[1:] intact."""
         self.maps[0].clear()

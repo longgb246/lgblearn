@@ -12,7 +12,7 @@ __docformat__ = 'restructuredtext'
 
 # 检测是否有 hard dependencies 的缺失
 # hard_dependencies = ('numpy', 'pytz', 'dateutil')
-hard_dependencies = ('numpy', 'dateutil')
+hard_dependencies = ('dateutil',)
 missing_dependencies = []
 
 for dependency in hard_dependencies:
@@ -25,23 +25,11 @@ if missing_dependencies:
     raise ImportError("Missing required dependencies {0}".format(missing_dependencies))
 del hard_dependencies, dependency, missing_dependencies
 
-# from core.api import *  # 会依次调用每个 module 下的 __init__.py 文件
+## from core.api import *  # 会依次调用每个 module 下的 __init__.py 文件
 # core __init__.py
 # api __init__.py
 
+## 关键的一步，把 core 的 Dataframe 提前
+# from pandas.core.api import *
 
-from collections import ChainMap
-
-values = ChainMap()
-values['x'] = 3
-values = values.new_child()
-values['x'] = 2
-print(values)
-values = values.new_child()
-print(values)
-values['x'] = 1
-print(values)
-print(values['x'])
-values = values.parents
-print(values['x'])
-
+from core.api import *
