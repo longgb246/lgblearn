@@ -38,8 +38,8 @@ def sort(np_array, cols, ascending=[]):
 
 
 def drop_duplicates(np_array):
-    """
-    去重
+    """去重
+
     使用方法如下：
     drop_duplicates(test)           # 去除test的重复的行
     """

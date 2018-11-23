@@ -2,10 +2,6 @@
 """
   Author  : 'longguangbin'
   Contact : lgb453476610@163.com
-  Date    : 2018/11/19
+  Date    : 2018/11/23
   Usage   :
 """
-
-from __future__ import print_function
-
-# print('index.py')

@@ -9,6 +9,24 @@
 import pandas as pd
 
 
+def trans_type(data, cols, tran_type):
+    """Trans pandas cols types
+
+    :param data: pandas dataframe
+    :param cols: cols list
+    :param tran_type: transform type
+    :return:
+    """
+    types_dict = {'str': str, 'int': int, 'float': float}
+    type_v = types_dict.get(tran_type)
+    if type_v:
+        data[cols] = data.loc[:, [cols]].applymap(type_v)
+    else:
+        raise ValueError('trans_type must be in {0}'.format(types_dict.keys()))
+    return data
+
+
+# 弃用的函数
 def date_range(start_date, end_date, freq='D'):
     """返回日期函数。
 
@@ -24,38 +42,3 @@ def date_range(start_date, end_date, freq='D'):
     """
     date_list = map(lambda x: str(x)[:10], pd.date_range(start_date, end_date, freq=freq).values)
     return date_list
-
-
-def trans2str(data, cols):
-    """
-    讲num类型转化成str类型
-    """
-    for col in cols:
-        data[col] = data.loc[:, [col]].applymap(str)
-    return data
-
-
-def trans2num(data, cols):
-    """
-    讲str类型转化成num类型
-    """
-    for col in cols:
-        data[col] = data.loc[:, [col]].applymap(float)
-    return data
-
-
-def trans2int(data, cols):
-    """
-    讲str类型转化成int类型
-    """
-    for col in cols:
-        data[col] = data.loc[:, [col]].applymap(int)
-    return data
-
-
-def cross_join(pda, pdb):
-    pda['tmp_cross_join'] = '1'
-    pdb['tmp_cross_join'] = '1'
-    pdc = pda.merge(pdb, on=['tmp_cross_join'])
-    pdc = pdc.drop(['tmp_cross_join'], axis=1)
-    return pdc

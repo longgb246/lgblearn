@@ -11,11 +11,9 @@ from copy import deepcopy
 
 
 class Combine(object):
+    """生成排列组合 """
 
     def __init__(self, arr_list=None):
-        """
-        生成排列组合
-        """
         self.all_Tree = []
         self.tree_arrange_List = []  # 排列
         self.tree_combine_List = []  # 组合
@@ -26,9 +24,7 @@ class Combine(object):
         self.reverse = False
 
     def _combine_tree(self, root, rest, depth):
-        """
-        生成树函数
-        """
+        """生成树函数 """
         depth += 1
         if depth <= self.tree_q:
             for each in rest:
@@ -42,9 +38,7 @@ class Combine(object):
                 self.tree_combine_List.append(root)
 
     def cnm(self, m=0):
-        """
-        C N 取 M 个的组合
-        """
+        """C N 取 M 个的组合 """
         if m > math.floor(len(self.arr_list) / 2):
             m = len(self.arr_list) - m
             self.reverse = True
@@ -55,9 +49,7 @@ class Combine(object):
         return self.tree_combine_List
 
     def create_tree(self):
-        """
-        生成组合
-        """
+        """生成组合 """
         for each in range(1, self.tree_n + 1):
             self.tree_q = each
             self._combine_tree([], self.arr_list, 0)
