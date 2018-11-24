@@ -2,8 +2,8 @@
 *.py[cod]
 *$py.class
 *.so
-*.egg
-*.egg-info
+# *.egg
+# *.egg-info
 
 # IDEA
 *.iml

@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: lgblearn
+Version: 0.0.1
+Summary: lgblearn for machine learning tools
+Home-page: https://github.com/longgb246/lgblearn
+Author: longgb246
+Author-email: lgb453476610@163.com
+Maintainer: longgb246
+Maintainer-email: lgb453476610@163.com
+License: UNKNOWN
+Download-URL: https://github.com/longgb246/lgblearn
+Description: # lgblearn
+        lgblearn for machine learning tools
+        
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Cython
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*
+Description-Content-Type: text/markdown
