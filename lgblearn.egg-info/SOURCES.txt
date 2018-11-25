@@ -22,11 +22,3 @@ lgblearn/core/tools/pdl.py
 lgblearn/core/tools/tools.py
 lgblearn/core/tools/components/__init__.py
 lgblearn/core/tools/components/sql_format.py
-lgblearn/pd_like/__init__.py
-lgblearn/pd_like/pd_init__.py
-lgblearn/pd_like/pd_setup.py
-lgblearn/pd_like/versioneer.py
-lgblearn/pd_like/core/__init__.py
-lgblearn/pd_like/core/api.py
-lgblearn/pd_like/core/config.py
-lgblearn/pd_like/core/config_init.py
