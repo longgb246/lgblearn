@@ -9,4 +9,5 @@
 *.iml
 .idea
 build
-
+log
+*.log

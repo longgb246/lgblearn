@@ -14,6 +14,8 @@ from dateutil.parser import parse
 import logging
 import shutil
 
+from components.sql_format import sql_format as _sql_format
+
 
 def run_time(t1, name="", is_print=True):
     """Performance test function, test run time.
@@ -110,6 +112,18 @@ def date_range(start_date, date_or_num, contain=False):
     date_list = map(lambda x: (min_date + datetime.timedelta(x)).strftime('%Y-%m-%d'),
                     range((max_date - min_date).days + 1))
     return date_list
+
+
+def sql_format(sql, wrap_add=None, mode='none'):
+    """Format the sql string.
+
+    :param sql: The input sql
+    :param wrap_add: Add some string to wrap a line, such as ',', 'and'
+    :param mode: 'none', 'upper', 'lower'. key words lower(upper), no change.
+    :return: Formatted sql string.
+    """
+    kwargs = {'sql': sql, 'wrap_add': wrap_add, 'mode': mode}
+    return _sql_format(**kwargs)
 
 
 # 待开发

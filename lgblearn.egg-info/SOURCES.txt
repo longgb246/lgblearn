@@ -20,6 +20,8 @@ lgblearn/core/tools/__init__.py
 lgblearn/core/tools/npl.py
 lgblearn/core/tools/pdl.py
 lgblearn/core/tools/tools.py
+lgblearn/core/tools/components/__init__.py
+lgblearn/core/tools/components/sql_format.py
 lgblearn/pd_like/__init__.py
 lgblearn/pd_like/pd_init__.py
 lgblearn/pd_like/pd_setup.py

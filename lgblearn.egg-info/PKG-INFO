@@ -12,6 +12,20 @@ Download-URL: https://github.com/longgb246/lgblearn
 Description: # lgblearn
         lgblearn for machine learning tools
         
+        # Usage
+        Not registered in pypi, can only be installed manually.
+        
+        install :  
+        ```
+        python setup.py install --record log
+        ```
+        
+        uninstall :  
+        ```
+        cat log | xargs rm －rf
+        ```
+        
+        
 Platform: any
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
