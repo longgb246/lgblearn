@@ -6,7 +6,6 @@
 Usage Of 'npl' :
 """
 
-
 import numpy as np
 
 

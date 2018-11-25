@@ -3,9 +3,8 @@
 # @Contact : lgb453476610@163.com
 # @Date    : 2018/11/25
 """
-Usage Of 'algorithms' :
+Usage Of 'a' :
 """
-
 
 import pandas as pd
 import statsmodels.api as sm

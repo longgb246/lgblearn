@@ -8,7 +8,7 @@ Usage Of 'maths' :
 
 
 import math
-from copy import deepcopy
+import copy
 
 
 class Combine(object):
@@ -29,7 +29,7 @@ class Combine(object):
         depth += 1
         if depth <= self.tree_q:
             for each in rest:
-                next_rest = deepcopy(rest)
+                next_rest = copy.deepcopy(rest)
                 next_root = root + [each]
                 next_rest.remove(each)
                 self._combine_tree(next_root, next_rest, depth)
