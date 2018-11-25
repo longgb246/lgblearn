@@ -1,6 +1,7 @@
 README.md
 setup.py
 lgblearn/__init__.py
+lgblearn/_version.py
 lgblearn.egg-info/PKG-INFO
 lgblearn.egg-info/SOURCES.txt
 lgblearn.egg-info/dependency_links.txt
@@ -9,11 +10,13 @@ lgblearn/compat/__init__.py
 lgblearn/compat/chainmap.py
 lgblearn/compat/chainmap_impl.py
 lgblearn/compat/numpy/__init__.py
+lgblearn/config/__init__.py
 lgblearn/core/__init__.py
 lgblearn/core/api.py
 lgblearn/core/index.py
 lgblearn/core/algorithms/__init__.py
 lgblearn/core/algorithms/algorithms.py
+lgblearn/core/algorithms/eda.py
 lgblearn/core/algorithms/maths.py
 lgblearn/core/plot/__init__.py
 lgblearn/core/tools/__init__.py

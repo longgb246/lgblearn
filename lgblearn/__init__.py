@@ -6,7 +6,6 @@
 Usage Of '__init__' :
 """
 
-
 # ------------------ origin learn the pandas init. ------------------
 
 __docformat__ = 'restructuredtext'

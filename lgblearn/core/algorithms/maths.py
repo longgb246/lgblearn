@@ -6,7 +6,6 @@
 Usage Of 'maths' :
 """
 
-
 import math
 import copy
 

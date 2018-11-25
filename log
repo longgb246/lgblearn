@@ -3,7 +3,9 @@
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/EGG-INFO/SOURCES.txt
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/EGG-INFO/top_level.txt
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/EGG-INFO/dependency_links.txt
+/Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/_version.py
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/__init__.py
+/Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/_version.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/__init__.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/compat/chainmap_impl.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/compat/chainmap_impl.py
@@ -35,7 +37,9 @@
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/plot/__init__.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/maths.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/algorithms.py
+/Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/eda.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/__init__.py
+/Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/eda.py
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/__init__.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/maths.py
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/core/algorithms/algorithms.pyc
@@ -55,3 +59,5 @@
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/pd_like/core/api.py
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/pd_like/core/__init__.pyc
 /Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/pd_like/core/api.pyc
+/Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/config/__init__.py
+/Users/longguangbin/python_env/anaconda2_sc/lib/python2.7/site-packages/lgblearn-0.0.1-py2.7.egg/lgblearn/config/__init__.pyc

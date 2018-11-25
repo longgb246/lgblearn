@@ -6,7 +6,6 @@
 Usage Of 'index' :
 """
 
-
 from __future__ import print_function
 
 # print('index.py')

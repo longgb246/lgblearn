@@ -6,6 +6,7 @@
 Usage Of 'tools' :
 """
 
+from __future__ import print_function
 import time
 import datetime
 import math
@@ -13,8 +14,10 @@ import os
 from dateutil.parser import parse
 import logging
 import shutil
+import string
 
 from components.sql_format import sql_format as _sql_format
+from lgblearn._version import PMAC, PWIN
 
 
 def _get_variable_name(x):
@@ -40,8 +43,6 @@ def run_time(t1, name="", is_print=True):
     :param is_print: True, Whether to print
     :return: Printed string content
 
-    Examples
-    --------
     >>> t1 = time.time()
     # test function
     >>> run_time(t1, 'name')
@@ -100,14 +101,14 @@ def date_range(start_date, date_or_num, contain=False):
     :param contain: whether include the date
     :return: ( list<string> ) date list
 
-    Examples
-    --------
     >>> date_range('2017-10-01', '2017-10-04')
     ['2017-10-01', '2017-10-02', '2017-10-03']
     >>> date_range('2017-10-01', '2017-10-04', contain=True)
     ['2017-10-01', '2017-10-02', '2017-10-03', '2017-10-04']
     >>> date_range('2017-10-01', 3)
     ['2017-10-01', '2017-10-02', '2017-10-03', '2017-10-04']
+    >>> date_range('2017-10-01', -3)
+    ['2017-09-28', '2017-09-29', '2017-09-30', '2017-10-01']
     """
     start_date_dt = parse(start_date)
     if isinstance(date_or_num, (unicode, str)):
@@ -156,15 +157,15 @@ def file_num2size(num_size, h=True):
     return res_info
 
 
-def get_file_size(filePath, h=True):
+def get_file_size(file_path, h=True):
     """获取文件的大小
 
-    :param filePath: 文件路径
+    :param file_path: 文件路径
     :param h: 是否human可读
     :return: {'value': 数值，'measure': 单位，'str': 字串}
     """
-    # filePath = unicode(filePath, 'utf8')
-    org_fsize = os.path.getsize(filePath)
+    # file_path = unicode(file_path, 'utf8')
+    org_fsize = os.path.getsize(file_path)
     res_info = file_num2size(org_fsize, h=h)
     return res_info
 
@@ -175,25 +176,46 @@ def timestamp2time(timestamp):
     return time.strftime('%Y-%m-%d %H:%M:%S', timeStruct)
 
 
-def get_file_createtime(filePath):
+def get_file_createtime(file_path):
     """获取文件的创建时间"""
-    # filePath = unicode(filePath, 'utf8')
-    t = os.path.getctime(filePath)
+    # file_path = unicode(file_path, 'utf8')
+    t = os.path.getctime(file_path)
     return timestamp2time(t)
 
 
-def get_file_modifytime(filePath):
+def get_file_modifytime(file_path):
     """获取文件的修改时间"""
-    # filePath = unicode(filePath, 'utf8')
-    t = os.path.getmtime(filePath)
+    # file_path = unicode(file_path, 'utf8')
+    t = os.path.getmtime(file_path)
     return timestamp2time(t)
 
 
-def get_file_accesstime(filePath):
+def get_file_accesstime(file_path):
     """获取文件的访问时间"""
-    # filePath = unicode(filePath, 'utf8')
-    t = os.path.getatime(filePath)
+    # file_path = unicode(file_path, 'utf8')
+    t = os.path.getatime(file_path)
     return timestamp2time(t)
+
+
+def count_lines(file_path):
+    """Count the lines number of a file.
+
+    :param file_path: file path
+    :return: lines number
+    """
+    if PMAC:
+        lines = int(os.popen('wc -l {0}'.format(file_path)).readlines()[0].split()[0])
+    elif PWIN:
+        lines = 0
+        with open(file_path, 'rb') as f:
+            while True:
+                read_buffer = f.read(8388608)  # 8 * 1024 * 1024
+                if not read_buffer:
+                    break
+                lines += read_buffer.count('\n')
+    else:
+        raise Exception
+    return lines
 
 
 def sql_format(sql, wrap_add=None, mode='none'):
@@ -206,6 +228,72 @@ def sql_format(sql, wrap_add=None, mode='none'):
     """
     kwargs = {'sql': sql, 'wrap_add': wrap_add, 'mode': mode}
     return _sql_format(**kwargs)
+
+
+def transpose(matrix):
+    """转置矩阵 list
+
+    :param matrix: matrix list
+    :return: transpose matrix list
+
+    >>> matrix = [[1, 1, 2], [2, 2, 1], [3, 3, 2], [3, 4, 5]]
+    # [1, 1, 2]
+    # [2, 2, 1]
+    # [3, 3, 2]
+    # [3, 4, 5]
+    >>> transpose(matrix)
+    [[1, 2, 3, 3], [1, 2, 3, 4], [2, 1, 2, 5]]
+    # [1, 2, 3, 3]
+    # [1, 2, 3, 4]
+    # [2, 1, 2, 5]
+    """
+    return map(list, zip(*matrix))
+
+
+def rotate(matrix):
+    """旋转矩阵 list
+
+    :param matrix: matrix list
+    :return: rotate matrix list
+
+    >>> matrix = [[1, 1, 2], [2, 2, 1], [3, 3, 2], [3, 4, 5]]
+    # [1, 1, 2]
+    # [2, 2, 1]
+    # [3, 3, 2]
+    # [3, 4, 5]
+    >>> rotate(matrix)
+    [[2, 1, 2, 5], [1, 2, 3, 4], [1, 2, 3, 3]]
+    # [2, 1, 2, 5]
+    # [1, 2, 3, 4]
+    # [1, 2, 3, 3]
+    """
+    return map(list, zip(*matrix)[::-1])
+
+
+def _list_str(list_v, len_v):
+    temp = string.Template(' {${name}:${value}}')
+    str_list = []
+    for i, each in enumerate(len_v):
+        str_list.append(temp.substitute(name=i, value=each))
+    str_v = ''.join(str_list)
+    return str_v.format(*list_v)
+
+
+def print_matrix(matrix, res=False):
+    """打印 matrix list
+
+    :param matrix: matrix list
+    :param res: 是否返回值
+    :return: 根据 res
+    """
+    matrix_t = transpose(matrix)
+    matrix_len = map(lambda x: max(map(lambda y: len(str(y)), x)) + 2, matrix_t)
+    matrix_list = map(lambda x: _list_str(x, matrix_len), matrix)
+    matrix_str = '\n'.join(matrix_list)
+    if not res:
+        print(matrix_str)
+    else:
+        return matrix_str
 
 
 # 待开发
