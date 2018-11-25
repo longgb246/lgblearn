@@ -1,0 +1,196 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ChainMap &#8212; lgblearn 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">lgblearn 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="chainmap">
+<h1>ChainMap<a class="headerlink" href="#chainmap" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="lgblearn.compat.chainmap.ChainMap">
+<em class="property">class </em><code class="descclassname">lgblearn.compat.chainmap.</code><code class="descname">ChainMap</code><span class="sig-paren">(</span><em>*maps</em><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_abcoll.MutableMapping</span></code></p>
+<p>A ChainMap groups multiple dicts (or other mappings) together
+to create a single, updatable view.</p>
+<p>The underlying mappings are stored in a list.  That list is public and can
+be accessed / updated using the <em>maps</em> attribute.  There is no other state.</p>
+<p>Lookups search the underlying mappings successively until a key is found.
+In contrast, writes, updates, and deletions only operate on the first
+mapping.</p>
+<p class="rubric">Attributes Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.parents" title="lgblearn.compat.chainmap.ChainMap.parents"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parents</span></code></a></td>
+<td>New ChainMap from maps[1:].</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.clear" title="lgblearn.compat.chainmap.ChainMap.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</td>
+<td>Clear maps[0], leaving maps[1:] intact.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.copy" title="lgblearn.compat.chainmap.ChainMap.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</td>
+<td>New ChainMap or subclass with a new copy of maps[0] and refs to maps[1:]</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.fromkeys" title="lgblearn.compat.chainmap.ChainMap.fromkeys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromkeys</span></code></a>(iterable,&nbsp;*args)</td>
+<td>Create a ChainMap with a single dict created from the iterable.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.get" title="lgblearn.compat.chainmap.ChainMap.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(k[,d])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.new_child" title="lgblearn.compat.chainmap.ChainMap.new_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_child</span></code></a>([m])</td>
+<td>New ChainMap with a new map followed by all previous maps.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.pop" title="lgblearn.compat.chainmap.ChainMap.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(key,&nbsp;*args)</td>
+<td>Remove <em>key</em> from maps[0] and return its value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#lgblearn.compat.chainmap.ChainMap.popitem" title="lgblearn.compat.chainmap.ChainMap.popitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code></a>()</td>
+<td>Remove and return an item pair from maps[0].</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="attribute">
+<dt id="lgblearn.compat.chainmap.ChainMap.parents">
+<code class="descname">parents</code><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.parents" title="Permalink to this definition">¶</a></dt>
+<dd><p>New ChainMap from maps[1:].</p>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="lgblearn.compat.chainmap.ChainMap.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear maps[0], leaving maps[1:] intact.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lgblearn.compat.chainmap.ChainMap.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>New ChainMap or subclass with a new copy of maps[0] and refs to
+maps[1:]</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="lgblearn.compat.chainmap.ChainMap.fromkeys">
+<em class="property">classmethod </em><code class="descname">fromkeys</code><span class="sig-paren">(</span><em>iterable</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a ChainMap with a single dict created from the iterable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lgblearn.compat.chainmap.ChainMap.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lgblearn.compat.chainmap.ChainMap.new_child">
+<code class="descname">new_child</code><span class="sig-paren">(</span><em>m=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.new_child" title="Permalink to this definition">¶</a></dt>
+<dd><p>New ChainMap with a new map followed by all previous maps. If no
+map is provided, an empty dict is used.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lgblearn.compat.chainmap.ChainMap.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>key</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove <em>key</em> from maps[0] and return its value. Raise KeyError if
+<em>key</em> not in maps[0].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lgblearn.compat.chainmap.ChainMap.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lgblearn.compat.chainmap.ChainMap.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove and return an item pair from maps[0]. Raise KeyError is maps[0]
+is empty.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/lgblearn.compat.chainmap.ChainMap.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">lgblearn 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, longgb246.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+    </div>
+  </body>
+</html>
