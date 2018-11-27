@@ -16,17 +16,27 @@ from algorithms import algorithms as alg
 from algorithms import maths as maths
 from algorithms import eda as eda
 
+from plot import plot_api as plot
+
 # 获取函数名
 _npl_funcs = ['npl.' + _f for _f in dir(npl) if
               (not _f.startswith('_')) and (_f not in sys.modules) and (_f not in ['np'])]
+
 _pdl_funcs = ['pdl.' + _f for _f in dir(pdl) if
               (not _f.startswith('_')) and (_f not in sys.modules) and (_f not in ['pd'])]
+
 _alg_funcs = ['alg.' + _f for _f in dir(alg) if
               (not _f.startswith('_')) and (_f not in sys.modules) and (_f not in ['np', 'pd', 'sm'])]
+
 _maths_funcs = ['maths.' + _f for _f in dir(maths) if (not _f.startswith('_')) and (_f not in sys.modules)]
+
 _eda_funcs = ['eda.' + _f for _f in dir(eda) if
               (not _f.startswith('_')) and (_f not in sys.modules) and (_f not in ['pd'])]
 
+_plot_funcs = ['plot.' + _f for _f in dir(plot) if
+               (not _f.startswith('_')) and (_f not in sys.modules) and (_f not in ['plt', 'np'])]
+
+# 所有函数
 all_funcs = [_f for _f in dir() if
              (not _f.startswith('_')) and (_f not in sys.modules) and (_f not in ['npl', 'pdl', 'alg', 'maths'])] + \
-            _npl_funcs + _pdl_funcs + _alg_funcs + _maths_funcs + _eda_funcs
+            _npl_funcs + _pdl_funcs + _alg_funcs + _maths_funcs + _eda_funcs + _plot_funcs

@@ -19,6 +19,9 @@ lgblearn/core/algorithms/algorithms.py
 lgblearn/core/algorithms/eda.py
 lgblearn/core/algorithms/maths.py
 lgblearn/core/plot/__init__.py
+lgblearn/core/plot/plot_api.py
+lgblearn/core/plot/plot_components.py
+lgblearn/core/plot/simple_plot.py
 lgblearn/core/tools/__init__.py
 lgblearn/core/tools/npl.py
 lgblearn/core/tools/pdl.py
