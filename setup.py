@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+# dist    :  python setup.py sdist
 # install    :  python setup.py install --record log
 # uninstall  :  cat log | xargs rm －rf
 
